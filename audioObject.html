@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Sound Samples</title>
+	<style>
+	.boxes {
+		height: 400px;
+		width: 400px;
+		border: 1px solid black;
+		display: inline-block;
+		margin-left: 50px;
+	}
+
+	#box1 {
+		background-color: #5D5A66;
+	}
+	
+	#box2 {
+		background-color: #8D6E6A;
+	}
+
+	#box3 {
+		background-color: #1A1D2F;
+	}
+
+	</style>
+</head>
+<body>
+
+	<div class="boxes" id="box1"></div>
+
+	<div class="boxes" id="box2"></div>
+
+	<div class="boxes" id="box3"></div>
+
+		<p id="demo"></p>
+		<button onclick="myFunction()">Try it</button>
+
+	<script>
+
+		init();
+
+		var createAudio = function(){
+			window.newAudioA = new Audio();
+			newAudioA.src = 'a.wav';
+
+			window.newAudioB = new Audio();
+			newAudioB.src = 'b.wav';
+
+			window.newAudioC = new Audio();
+			newAudioC.src = 'c.wav';
+		}();
+	
+	
+	function init(){
+		var playButton = document.getElementById('box1');
+		playButton.addEventListener('click', playAudioA, false);
+
+		var playButton = document.getElementById('box2');
+		playButton.addEventListener('click', playAudioB, false);
+
+		var playButton = document.getElementById('box3');
+		playButton.addEventListener('click', playAudioC, false);
+	}
+
+	
+	function playAudioA() {
+		newAudioA.play()
+	}
+	function playAudioB() {
+		newAudioB.play()
+	}
+	function playAudioC() {
+		newAudioC.play()
+	}
+
+
+	function myFunction() {
+	var aString = "This is a string";
+
+	var res = aString.toUpperCase();
+	document.getElementById("demo").innerHTML = res;
+}
+
+	console.log(window.resizeBy);
+	
+
+
+	</script>
+	
+</body>
+</html>
